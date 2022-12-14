@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('say hello') {
+        stage('git repo') {
             steps {
-                echo 'Hello World'
+                git branch: 'main', url: 'https://github.com/YourAWS-Bilal/TipTop'
             }
         }
     }
