@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     stages {
         stage('git branch') {
             steps {
@@ -8,11 +8,8 @@ pipeline {
             }
         }
     }
-      stages {
-        stage('build') {
+       stage('build') {
             steps {
                 git branch: 'main', url: '/var/jenkins_home/workspace/CICD-WORKFLOW/docker-compose.yml'
             }
-        }
-    }
 }
