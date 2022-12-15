@@ -10,6 +10,7 @@ pipeline {
     }
        stage('build') {
             steps {
-                git branch: 'main', url: '/var/jenkins_home/workspace/CICD-WORKFLOW/docker-compose.yml'
+                sh 'cd /var/jenkins_home/workspace/CICD-WORKFLOW/'
+                 sh 'docker compose up'
             }
 }
