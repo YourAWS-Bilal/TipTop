@@ -3,8 +3,8 @@ pipeline {
      stages {
         stage('build') {
             steps {
-                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
-                 sh 'docker-compose up -d'
+              
+                 sh 'docker-compose up -d --url /var/jenkins_home/workspace/CICDWORKFLOW/'
             }
         }
     }
