@@ -5,7 +5,7 @@ pipeline {
         stage('git branch') {
             steps {
                 git branch: 'main', url: 'https://github.com/YourAWS-Bilal/TipTop'
-                 sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/ &&  docker-compose up -d --url /var/jenkins_home/workspace/CICDWORKFLOW/'
+                 sh 'docker-compose up -d --url /var/jenkins_home/workspace/CICDWORKFLOW/'
             }
         }
     }
