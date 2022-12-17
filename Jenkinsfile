@@ -15,7 +15,7 @@ pipeline {
                  sh 'docker compose up -d'
             }
         }
-        stage('build down') {
+        stage('build up') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
                sh 'docker compose down'
