@@ -29,6 +29,7 @@ pipeline {
     stage('Test') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
+                sh 'composer update'
                  sh 'phpunit --log-junit testinglogs.xml'
             }
         }
