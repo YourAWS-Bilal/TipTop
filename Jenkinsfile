@@ -4,7 +4,7 @@ pipeline {
  stages {
     stage('build down') {
             steps {
-               sh 'chmod 777 -R /var/jenkins_home/workspace/CICDWORKFLOW/'
+               sh 'sudo chmod 777 -R /var/jenkins_home/workspace/CICDWORKFLOW/'
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
                sh 'docker compose down'
             }
