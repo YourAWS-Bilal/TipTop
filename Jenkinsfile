@@ -2,6 +2,12 @@
 pipeline {
     agent any
 
+    stage('build down') {
+            steps {
+               sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
+               sh 'docker compose down'
+            }
+        }
     stages {
         stage('Git Repo') {
             steps {
@@ -9,17 +15,18 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/YourAWS-Bilal/TipTop'
             }
         }
-        stage('Build') {
+    stage('Build') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
                  sh 'docker compose up -d'
             }
         }
-        stage('build down') {
+    stage('Test') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
-               sh 'docker compose down'
+                 sh 'phpunit --log-junit testinglogs.xml'
             }
         }
+
     }
 }
