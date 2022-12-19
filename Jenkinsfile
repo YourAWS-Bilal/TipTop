@@ -2,7 +2,7 @@
 pipeline {
     agent any
  stages {
-    stage('build down') {
+    stage('old build down') {
             steps {
                sh 'sudo chmod 777 -R /var/jenkins_home/workspace/CICDWORKFLOW/'
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
@@ -20,13 +20,13 @@ pipeline {
             }
         }
         
-    stage('Build') {
+    stage('Build UP') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
                  sh 'docker compose up -d'
             }
         }
-    stage('Test') {
+    stage('Testing') {
             steps {
                sh 'cd /var/jenkins_home/workspace/CICDWORKFLOW/'
                  sh 'phpunit --log-junit testinglogs.xml'
