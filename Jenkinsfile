@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh 'rm -R /var/jenkins_home/workspace/CICDWORKFLOW/*'
                 git branch: 'main', url: 'https://github.com/YourAWS-Bilal/TipTop'
+                sh 'composer dump-autoload'
             }
         }
         
